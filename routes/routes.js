@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Users = require('../../../database/models/User');
+const Users = require('../models/User');
 const {tapPrice, staminaPrice} = require('../prices')
 
 
@@ -31,6 +31,8 @@ router.post('/update-balance', async (req, res) => {
         }
 
         let {staminaLimit, stamina: varStamina} = await Users.findOne({telegramId: tgId});
+
+        console.log(staminaLimit, varStamina)
 
         const interval = setInterval(async () => {
             if (varStamina < staminaLimit) {
