@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const router = require('./routes/routes');
 const app = express();
-const port = 80;
+const port = 3001;
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
