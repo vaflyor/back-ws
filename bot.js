@@ -2,8 +2,7 @@ require('dotenv').config();
 const TelegramApi = require('node-telegram-bot-api');
 const token = process.env.token;
 const bot = new TelegramApi(token, {polling: true});
-const webAppUrl = 'https://6628186e67d74f0d15681bb5--ephemeral-speculoos-683ea9.netlify.app/';
-
+const webAppUrl = process.env.webAppUrl;
 const User = require('./models/User');
 
 bot.setMyCommands([
