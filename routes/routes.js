@@ -8,7 +8,8 @@ router.post('/', async (req, res) => {
     try {
         const tgId = req.body.tgId;
         const user = await Users.findOne({telegramId: tgId})
-
+	console.log(tgId)
+	console.log(user)
         if (!user) {
             return res.status(400).json({message: 'User not found'});
         }
